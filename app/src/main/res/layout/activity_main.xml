@@ -41,7 +41,7 @@
             android:id="@+id/txtMasuk"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Masuk"
+            android:text="Masukk"
             android:layout_marginBottom="20dp"
             android:gravity="center"/>
 
