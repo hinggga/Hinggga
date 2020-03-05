@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/Hinggga.iml" filepath="$PROJECT_DIR$/.idea/Hinggga.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Hingga.iml" filepath="$PROJECT_DIR$/Hingga.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
 </project>
