@@ -10,6 +10,8 @@ import android.app.ActionBar;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.FrameLayout;
 
 import com.google.android.material.tabs.TabItem;
@@ -22,6 +24,7 @@ public class Home extends AppCompatActivity {
     private TabItem tab1,tab2,tab3;
     public PageAdapter pagerAdapter;
 
+    Button keluar ;
 
     SharedPreferences pref ;
 
@@ -30,16 +33,19 @@ public class Home extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        pref = getApplicationContext().getSharedPreferences( "MyPref", MODE_PRIVATE );
-        SharedPreferences.Editor editor = pref.edit();
-
-        editor.putString("KEY1","Test Shared Prefenrances");
-        editor.commit();
-
-        Log.i("Test Shared Preferances", pref.getString("KEY1", null));
-        editor.remove("KEY1");
-        editor.commit();
         setContentView(R.layout.activity_home);
+
+        keluar = findViewById(R.id.btnRemember);
+        keluar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SharedPreferences preferen = getSharedPreferences("masuk", MODE_PRIVATE);
+                SharedPreferences.Editor editor = preferen.edit();
+                editor.putString("ingat", "false");
+                editor.apply();
+                finish();
+            }
+        });
 
         
         tabLayout = (TabLayout) findViewById(R.id.tablayout);
