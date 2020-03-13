@@ -2,6 +2,7 @@ package com.example.hingga;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.database.sqlite.SQLiteDatabase;
 
@@ -38,6 +39,21 @@ public class DbManager extends SQLiteOpenHelper {
             return "Failed";
         else
             return "Successfully inserted";
+
+    }
+
+    public Boolean  chkemail(String email){
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("Select * from tbl_user where email=?", new String[]{email});
+        if (cursor.getCount()>0)return false;
+        else return     true;
+    }
+
+    public  Boolean emailpassword(String email, String password){
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("select * from tbl_user where email=? and password=?", new String[]{email,password});
+        if (cursor.getCount()>0 ) return true;
+        else return false;
 
     }
 }

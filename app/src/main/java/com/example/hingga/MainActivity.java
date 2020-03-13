@@ -17,7 +17,9 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity  {
 
-    EditText email,password;
+    EditText e1,e2;
+    Button  btnMasuk;
+    DbManager db;
 
     Button masuk;
 
@@ -36,12 +38,40 @@ public class MainActivity extends AppCompatActivity  {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        db = new DbManager(this);
+        e1 = (EditText) findViewById(R.id.Email) ;
+        e2=(EditText)findViewById(R.id.Password);
+
+        btnMasuk=(Button)findViewById(R.id.btnMasuk);
+        btnMasuk.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SharedPreferences preferen = getSharedPreferences("masuk", MODE_PRIVATE);
+                SharedPreferences.Editor editor = preferen.edit();
+                editor.putString("ingat", "true");
+                editor.apply();
+
+                //     Toast.makeText(getApplicationContext(),"Email" + email + "password : " + password, Toast.LENGTH_LONG).show();
+
+
+                String email = e1.getText().toString();
+                String password = e2.getText().toString();
+                Boolean Chkemailpass = db.emailpassword(email,password);
+                if (Chkemailpass==true)
+                    Toast.makeText(getApplicationContext(),"SUKSES LOGIN",Toast.LENGTH_LONG).show();
+                 else
+                    Toast.makeText(getApplicationContext(),"SUKSES LOGIN",Toast.LENGTH_LONG).show();
+
+                Intent i = new Intent(MainActivity.this, Home.class);
+                startActivity(i);
+
+
+            }
+        });
 
 
 
 
-        email = findViewById(R.id.Email);
-        password = findViewById(R.id.Password);
         masuk = findViewById(R.id.btnMasuk);
 
 
@@ -57,21 +87,6 @@ public class MainActivity extends AppCompatActivity  {
         });
 
 
-
-
-        masuk.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                SharedPreferences preferen = getSharedPreferences("masuk", MODE_PRIVATE);
-                SharedPreferences.Editor editor = preferen.edit();
-                editor.putString("ingat", "true");
-                editor.apply();
-
-                Toast.makeText(getApplicationContext(),"Email" + email + "password : " + password, Toast.LENGTH_LONG).show();
-                Intent i = new Intent(MainActivity.this, Home.class);
-                startActivity(i);
-            }
-        });
 
 
 
