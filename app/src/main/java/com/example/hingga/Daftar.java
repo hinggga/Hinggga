@@ -23,10 +23,6 @@ public class Daftar extends AppCompatActivity {
         t3=(EditText)findViewById(R.id.t3);
 
 
-
-
-
-
     }
 
     public void addRecord (View view){

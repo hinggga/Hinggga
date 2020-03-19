@@ -20,12 +20,13 @@ public class MainActivity extends AppCompatActivity  {
     EditText e1,e2;
     Button  btnMasuk;
     DbManager db;
-
     Button masuk;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
         SharedPreferences preferences = getSharedPreferences("masuk", MODE_PRIVATE);
         String cek = preferences.getString("ingat","");
 
@@ -35,8 +36,7 @@ public class MainActivity extends AppCompatActivity  {
         }
 
 
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+
 
         db = new DbManager(this);
         e1 = (EditText) findViewById(R.id.Email) ;
@@ -57,13 +57,14 @@ public class MainActivity extends AppCompatActivity  {
                 String email = e1.getText().toString();
                 String password = e2.getText().toString();
                 Boolean Chkemailpass = db.emailpassword(email,password);
-                if (Chkemailpass==true)
-                    Toast.makeText(getApplicationContext(),"SUKSES LOGIN",Toast.LENGTH_LONG).show();
+                if (Chkemailpass==true) {
+                    Toast.makeText(getApplicationContext(), "SUKSES LOGIN", Toast.LENGTH_LONG).show();
+                    Intent i = new Intent(MainActivity.this, Home.class);
+                    startActivity(i);
+                }
                  else
-                    Toast.makeText(getApplicationContext(),"SUKSES LOGIN",Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(),"Login Gagal",Toast.LENGTH_LONG).show();
 
-                Intent i = new Intent(MainActivity.this, Home.class);
-                startActivity(i);
 
 
             }
@@ -85,8 +86,6 @@ public class MainActivity extends AppCompatActivity  {
                 startActivity(i);
             }
         });
-
-
 
 
 
