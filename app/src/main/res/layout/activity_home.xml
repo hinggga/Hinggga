@@ -11,13 +11,8 @@
     tools:context=".Home">
 
 
-    <Button
-        android:id="@+id/btnRemember"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:gravity="center"
-        android:text="Logout" />
+
+
 
 
     <com.google.android.material.tabs.TabLayout
@@ -45,17 +40,50 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
+
+
     </com.google.android.material.tabs.TabLayout>
 
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnStart"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="Start Job "
+            android:onClick="scheduleJob"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnCancel"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="Cancel Job"
+            android:onClick="cancleJob"/>
+
+
+        <Button
+            android:id="@+id/btnRemember"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:gravity="center"
+            android:text="Logout" />
+
+    </LinearLayout>
+
     <androidx.viewpager.widget.ViewPager
+
         android:id="@+id/viewpager"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
 
     </androidx.viewpager.widget.ViewPager>
 
 
 
-
-
-</LinearLayout>
+    </LinearLayout>

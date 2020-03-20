@@ -9,16 +9,18 @@ import androidx.viewpager.widget.ViewPager;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NotificationManagerCompat;
 import androidx.viewpager.widget.ViewPager;
-
 import android.app.Notification;
+import android.app.job.JobInfo;
+import android.app.job.JobScheduler;
+import android.content.ComponentName;
 import android.content.IntentFilter;
 import android.net.wifi.WifiManager;
-
 import android.app.ActionBar;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.nfc.Tag;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -31,6 +33,7 @@ import static com.example.hingga.App.hidup;
 import static com.example.hingga.App.mati;
 
 public class Home extends AppCompatActivity {
+    private static final String TAG = "Home";
     private NotificationManagerCompat notificationManager;
     private View v;
     private TabLayout tabLayout;
@@ -39,6 +42,7 @@ public class Home extends AppCompatActivity {
     public PageAdapter pagerAdapter;
     Button keluar ;
     SharedPreferences pref ;
+    private Button btnStartJob, btnCancelJob;
 
 
 
@@ -65,6 +69,9 @@ public class Home extends AppCompatActivity {
         tab2 = (TabItem) findViewById(R.id.Tab2);
         tab3 = (TabItem) findViewById(R.id.Tab3);
         viewPager = findViewById(R.id.viewpager);
+        btnStartJob = findViewById(R.id.btnStart);
+        btnCancelJob = findViewById(R.id.btnCancel);
+
 
         pagerAdapter = new PageAdapter(getSupportFragmentManager(),tabLayout.getTabCount());
         viewPager.setAdapter(pagerAdapter);
@@ -94,7 +101,6 @@ public class Home extends AppCompatActivity {
         });
 
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
-
         notificationManager = NotificationManagerCompat.from(this);
     }
 
@@ -149,5 +155,28 @@ public class Home extends AppCompatActivity {
                 .build();
 
         notificationManager.notify(2,notification);
+    }
+
+    public void scheduleJob(View view){
+        ComponentName componentName = new ComponentName(getApplicationContext(), MyJobService.class);
+        JobInfo info =  new JobInfo.Builder(123,componentName)
+                .setRequiredNetworkType(JobInfo.NETWORK_TYPE_UNMETERED)
+                .setPersisted(true)
+                .setPeriodic(15 * 60 * 1000)
+                .build();
+
+        JobScheduler scheduler = (JobScheduler) getSystemService(JOB_SCHEDULER_SERVICE);
+                int resultCode = scheduler.schedule(info);
+                if (resultCode == JobScheduler.RESULT_SUCCESS){
+                    Log.i(TAG, "scheduleJob: Job Scheduled");
+                }else {
+                    Log.i(TAG, "scheduleJob: Job Scheduling failed");
+                }
+    }
+
+    public void cancleJob(View view){
+        JobScheduler scheduler = (JobScheduler) getSystemService(JOB_SCHEDULER_SERVICE);
+        scheduler.cancel(123);
+        Log.i(TAG, "cancleJob: ");
     }
 }
