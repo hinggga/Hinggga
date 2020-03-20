@@ -34,6 +34,10 @@
         <activity android:name="com.example.hingga.Daftar" />
         <activity android:name="com.example.hingga.Home" >
         </activity>
+
+        <service
+            android:name="com.example.hingga.MyJobService"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
     </application>
 
 </manifest>
