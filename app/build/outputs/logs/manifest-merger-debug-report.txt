@@ -113,9 +113,15 @@ ADDED from C:\Users\R.O.G\Documents\GitHub\Hinggga\app\src\main\AndroidManifest.
 	android:name
 		ADDED from C:\Users\R.O.G\Documents\GitHub\Hinggga\app\src\main\AndroidManifest.xml:24:19-41
 activity#com.example.hingga.Home
-ADDED from C:\Users\R.O.G\Documents\GitHub\Hinggga\app\src\main\AndroidManifest.xml:25:9-27:20
+ADDED from C:\Users\R.O.G\Documents\GitHub\Hinggga\app\src\main\AndroidManifest.xml:25:9-26:20
 	android:name
 		ADDED from C:\Users\R.O.G\Documents\GitHub\Hinggga\app\src\main\AndroidManifest.xml:25:19-39
+service#com.example.hingga.MyJobService
+ADDED from C:\Users\R.O.G\Documents\GitHub\Hinggga\app\src\main\AndroidManifest.xml:27:17-28:81
+	android:permission
+		ADDED from C:\Users\R.O.G\Documents\GitHub\Hinggga\app\src\main\AndroidManifest.xml:28:21-79
+	android:name
+		ADDED from C:\Users\R.O.G\Documents\GitHub\Hinggga\app\src\main\AndroidManifest.xml:27:26-54
 uses-sdk
 INJECTED from C:\Users\R.O.G\Documents\GitHub\Hinggga\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\R.O.G\Documents\GitHub\Hinggga\app\src\main\AndroidManifest.xml

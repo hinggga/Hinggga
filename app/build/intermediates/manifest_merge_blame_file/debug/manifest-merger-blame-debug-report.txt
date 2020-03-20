@@ -59,9 +59,16 @@
 33-->C:\Users\R.O.G\Documents\GitHub\Hinggga\app\src\main\AndroidManifest.xml:24:9-44
 33-->C:\Users\R.O.G\Documents\GitHub\Hinggga\app\src\main\AndroidManifest.xml:24:19-41
 34        <activity android:name="com.example.hingga.Home" >
-34-->C:\Users\R.O.G\Documents\GitHub\Hinggga\app\src\main\AndroidManifest.xml:25:9-27:20
+34-->C:\Users\R.O.G\Documents\GitHub\Hinggga\app\src\main\AndroidManifest.xml:25:9-26:20
 34-->C:\Users\R.O.G\Documents\GitHub\Hinggga\app\src\main\AndroidManifest.xml:25:19-39
 35        </activity>
-36    </application>
-37
-38</manifest>
+36
+37        <service
+37-->C:\Users\R.O.G\Documents\GitHub\Hinggga\app\src\main\AndroidManifest.xml:27:17-28:81
+38            android:name="com.example.hingga.MyJobService"
+38-->C:\Users\R.O.G\Documents\GitHub\Hinggga\app\src\main\AndroidManifest.xml:27:26-54
+39            android:permission="android.permission.BIND_JOB_SERVICE" />
+39-->C:\Users\R.O.G\Documents\GitHub\Hinggga\app\src\main\AndroidManifest.xml:28:21-79
+40    </application>
+41
+42</manifest>

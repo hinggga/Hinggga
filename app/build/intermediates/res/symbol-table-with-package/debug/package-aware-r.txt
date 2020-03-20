@@ -1005,6 +1005,7 @@ drawable design_ic_visibility
 drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
+drawable ic_full_wifi
 drawable ic_hidup
 drawable ic_launcher_background
 drawable ic_launcher_foreground
@@ -1070,9 +1071,11 @@ id barrier
 id beginning
 id blocking
 id bottom
+id btnCancel
 id btnDaftar
 id btnMasuk
 id btnRemember
+id btnStart
 id buttonPanel
 id cancel_action
 id center
