@@ -2,7 +2,6 @@ package com.example.hingga;
 
 import android.app.Application;
 import android.app.NotificationChannel;
-
 import android.app.NotificationManager;
 import android.os.Build;
 
@@ -19,22 +18,22 @@ public class App extends Application {
 
     private void createNotification() {
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
-            NotificationChannel nyala = new NotificationChannel(
+            NotificationChannel wifiOn = new NotificationChannel(
                     hidup,
                     "WiFi di Aktifkan",
                     NotificationManager.IMPORTANCE_HIGH);
-                    nyala.setDescription("WiFi di Aktifkan");
+                    wifiOn.setDescription("WiFi di Aktifkan");
 
-            NotificationChannel nyali = new NotificationChannel(
+            NotificationChannel wifiOff = new NotificationChannel(
                     mati,
                     "WiFi di Nonaktifkan",
-                    NotificationManager.IMPORTANCE_HIGH);
-            nyali.setDescription("WiFi di Nonaktifkan");
+                    NotificationManager.IMPORTANCE_LOW);
+                    wifiOff.setDescription("WiFi di Nonaktifkan");
 
             NotificationManager manager = getSystemService(NotificationManager.class);
             assert manager != null;
-            manager.createNotificationChannel(nyala);
-            manager.createNotificationChannel(nyali);
+            manager.createNotificationChannel(wifiOn);
+            manager.createNotificationChannel(wifiOff);
         }
     }
 }

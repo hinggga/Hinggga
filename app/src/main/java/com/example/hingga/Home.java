@@ -125,10 +125,10 @@ public class Home extends AppCompatActivity {
     }
 
     public void wifiHidup(View view){
-        String title = "Apps";
+        String title = "Apps Hingga";
         String message = "Wifi di Aktifkan";
     android.app.Notification notification = new NotificationCompat.Builder(this,hidup)
-            .setSmallIcon(R.drawable.ic_hidup)
+            .setSmallIcon(R.drawable.ic_full_wifi)
             .setPriority(NotificationCompat.PRIORITY_HIGH)
             .setCategory(NotificationCompat.CATEGORY_MESSAGE)
             .setContentTitle(title)
@@ -139,10 +139,10 @@ public class Home extends AppCompatActivity {
     }
 
     public void wifiMati(View view){
-        String title = "Apps";
+        String title = "Apps Hingga";
         String message = "Wifi di Nonaktifkan";
         android.app.Notification notification = new NotificationCompat.Builder(this,mati)
-                .setSmallIcon(R.drawable.ic_hidup)
+                .setSmallIcon(R.drawable.ic_mati)
                 .setPriority(NotificationCompat.PRIORITY_LOW)
                 .setContentTitle(title)
                 .setContentText(message)
