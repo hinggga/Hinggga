@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "350252488349",
+    "firebase_url": "https://hinggga-41099.firebaseio.com",
+    "project_id": "hinggga-41099",
+    "storage_bucket": "hinggga-41099.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:350252488349:android:27d3c9f6f238fcbbca6674",
+        "android_client_info": {
+          "package_name": "com.example.tugas"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "350252488349-f1iernkocmlpppc21eabgtsvqdv2nd1a.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.tugas",
+            "certificate_hash": "87065d7ead0948f87b63c675c348da1094a9a392"
+          }
+        },
+        {
+          "client_id": "350252488349-6b8jb2f1bo70qks0aq52had7rudsgebq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyApHwsKw4btj_Ig1o7Sbpea_aNcTpUsosM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "350252488349-6b8jb2f1bo70qks0aq52had7rudsgebq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
