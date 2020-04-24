@@ -51,6 +51,14 @@ public class Home extends AppCompatActivity {
                 startActivity(i);
             }
         });
+        Button aku =(Button)findViewById(R.id.btnCamera);
+       aku.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(Home.this, Cameraku.class);
+                startActivity(i);
+            }
+        });
 
         keluar = findViewById(R.id.btnRemember);
         keluar.setOnClickListener(new View.OnClickListener() {
