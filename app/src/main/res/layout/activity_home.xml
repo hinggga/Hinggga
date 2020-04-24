@@ -47,27 +47,27 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="134dp"
         android:gravity="center">
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnStart"
-            android:layout_width="85dp"
-            android:layout_height="40dp"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
             android:onClick="scheduleJob"
             android:text="Start Job " />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnCancel"
-            android:layout_width="83dp"
-            android:layout_height="40dp"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
             android:onClick="cancleJob"
             android:text="Cancel Job" />
 
 
         <Button
             android:id="@+id/btnRemember"
-            android:layout_width="120dp"
+            android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
             android:gravity="center"
@@ -75,22 +75,33 @@
 
         <Button
             android:id="@+id/btnTambah"
-            android:layout_width="match_parent"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
             android:gravity="center"
             android:text="Tambah Mahasiswa" />
 
+        <Button
+            android:id="@+id/btnCamera"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:text="Camera" />
     </LinearLayout>
 
     <androidx.viewpager.widget.ViewPager
 
         android:id="@+id/viewpager"
         android:layout_width="match_parent"
-        android:layout_height="571dp">
+        android:layout_height="390dp">
 
 
     </androidx.viewpager.widget.ViewPager>
+
+
+
+
 
 
 </LinearLayout>
